@@ -1,38 +1,38 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { Table } from "react-bootstrap";
+import "./ManageOrders.css";
 
 const ManageOrders = () => {
+  const [orders, setOrders] = useState([]);
+  useEffect(() => {
+    fetch("./places.json")
+      .then((res) => res.json())
+      .then((data) => setOrders(data));
+  }, []);
   return (
-    <Table responsive className="container">
-      <thead>
-        <tr>
-          <th>#</th>
-          {Array.from({ length: 12 }).map((_, index) => (
-            <th key={index}>Table heading</th>
+    <div className="container text-center">
+      <h1>My Orders</h1>
+      <Table responsive className="table">
+        <thead>
+          <tr>
+            <th>Index</th>
+            <th>Destination</th>
+            <th>Hotel</th>
+            <th>Update</th>
+          </tr>
+        </thead>
+        <tbody>
+          {orders?.map((order, index) => (
+            <tr>
+              <td>{index + 1}</td>
+              <td>{order.title}</td>
+              <td>{order.hotel}</td>
+              <td>Cancel</td>
+            </tr>
           ))}
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td>1</td>
-          {Array.from({ length: 12 }).map((_, index) => (
-            <td key={index}>Table cell {index}</td>
-          ))}
-        </tr>
-        <tr>
-          <td>2</td>
-          {Array.from({ length: 12 }).map((_, index) => (
-            <td key={index}>Table cell {index}</td>
-          ))}
-        </tr>
-        <tr>
-          <td>3</td>
-          {Array.from({ length: 12 }).map((_, index) => (
-            <td key={index}>Table cell {index}</td>
-          ))}
-        </tr>
-      </tbody>
-    </Table>
+        </tbody>
+      </Table>
+    </div>
   );
 };
 
