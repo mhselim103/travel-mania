@@ -27,7 +27,9 @@ const ManageOrders = () => {
               <td>{index + 1}</td>
               <td>{order.title}</td>
               <td>{order.hotel}</td>
-              <td>Cancel</td>
+              <td>
+                <button className="red-button">Cancel</button>
+              </td>
             </tr>
           ))}
         </tbody>

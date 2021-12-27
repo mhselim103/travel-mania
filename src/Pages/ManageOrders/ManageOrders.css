@@ -2,3 +2,10 @@
   border: 1px solid;
   background-color: seashell;
 }
+.red-button {
+  background-color: rgb(255, 0, 0);
+  color: white;
+  border-radius: 25px;
+  border: none;
+  padding: 5px 20px;
+}
