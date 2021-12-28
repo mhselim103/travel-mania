@@ -2,8 +2,8 @@ import React, { useEffect, useState } from "react";
 import { Table } from "react-bootstrap";
 import useAuth from "../../Hooks/useAuth";
 import Header from "../Shared/Header/Header";
-
-const ManageOrders = () => {
+import "./MyOrders.css";
+const MyOrders = () => {
   const [orders, setOrders] = useState([]);
   const { logOut } = useAuth();
   useEffect(() => {
@@ -14,13 +14,13 @@ const ManageOrders = () => {
   return (
     <div className="container text-center">
       {/* <Header></Header> */}
-      <h1 className="banner">My Orders</h1>
+      <h1 className="">My Orders</h1>
       <Table responsive className="table">
         <thead>
           <tr>
             <th>Index</th>
             <th>Destination</th>
-            <th>Id</th>
+            <th>Hotel</th>
             <th>Update</th>
           </tr>
         </thead>
@@ -29,9 +29,9 @@ const ManageOrders = () => {
             <tr>
               <td>{index + 1}</td>
               <td>{order.title}</td>
-              <td>{order.price}</td>
+              <td>{order.hotel}</td>
               <td>
-                <button className="red-button">Delete This Order</button>
+                <button className="red-button">Cancel</button>
               </td>
             </tr>
           ))}
@@ -41,4 +41,4 @@ const ManageOrders = () => {
   );
 };
 
-export default ManageOrders;
+export default MyOrders;

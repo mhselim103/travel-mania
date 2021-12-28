@@ -28,7 +28,7 @@ const useFirebase = () => {
     signInWithPopup(auth, googleProvider)
       .then((result) => {
         setUser(result.user);
-        const destination = location.state?.from;
+        const destination = location.state?.from || "/";
         console.log(destination);
         navigate(destination);
       })

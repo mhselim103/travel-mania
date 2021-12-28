@@ -1,8 +1,9 @@
 import React from "react";
 import { Card, Col } from "react-bootstrap";
+import { Link } from "react-router-dom";
 
 const Destination = ({ place }) => {
-  const { img, title, price } = place;
+  const { img, title, price, id } = place;
   return (
     <Col>
       <Card className="h-100">
@@ -11,8 +12,10 @@ const Destination = ({ place }) => {
           <Card.Title>{title}</Card.Title>
         </Card.Body>
         <div className="px-3 my-1 d-flex align-items-center justify-content-between">
-          <h6>Price : {price}</h6>
-          <button className="button mb-1">Explore </button>
+          <h6>Fare : {price}</h6>
+          <Link to={`/${id}`}>
+            <button className="button mb-1">Explore </button>
+          </Link>
         </div>
       </Card>
     </Col>

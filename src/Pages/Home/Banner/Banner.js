@@ -4,7 +4,7 @@ import bannerimg from "../../../Images/hero-1.png";
 
 const Banner = () => {
   return (
-    <div className="container banner ">
+    <div className="container  ">
       <div className="row my-5">
         <div className="col-sm-12 col-md-4">
           <img className="w-100" src={bannerimg} alt="" />
