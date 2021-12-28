@@ -1,10 +1,6 @@
-/* .banner {
-  background-image: url(/src/Images/chang-duong-Sj0iMtq_Z4w-unsplash.jpg);
-  background-size: cover;
-  background-position: center;
-  background-attachment: fixed;
-  height: 100vh;
-} */
+.banner {
+  /* margin-top: 100px !important; */
+}
 .heading {
   font-size: 5rem;
   font-weight: bolder;

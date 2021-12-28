@@ -9,19 +9,33 @@ import {
   signInWithEmailAndPassword,
   updateProfile,
 } from "firebase/auth";
-import initializeAuthentication from "../Pages/Firebase/firebase.init";
 
+import initializeAuthentication from "../Pages/Authentication/Firebase/firebase.init";
 initializeAuthentication();
 const useFirebase = () => {
   const googleProvider = new GoogleAuthProvider();
+  // console.log(googleProvider);
   const [user, setUser] = useState({});
   const [isLoading, setIsLoading] = useState(true);
   const auth = getAuth();
+  // console.log(signInWithPopup);
 
   // signIn
-  const signInUsingGoogle = () => {
+  const signInUsingGoogle = (location, navigate) => {
+    const auth = getAuth();
+    // console.log("hello");
     setIsLoading(true);
-    return signInWithPopup(auth, googleProvider);
+    signInWithPopup(auth, googleProvider)
+      .then((result) => {
+        setUser(result.user);
+        const destination = location.state?.from;
+        console.log(destination);
+        navigate(destination);
+      })
+      .catch((error) => {
+        console.log(error.message);
+      })
+      .finally(() => setIsLoading(false));
   };
 
   // signOut

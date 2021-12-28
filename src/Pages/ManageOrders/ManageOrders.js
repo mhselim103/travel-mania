@@ -1,9 +1,11 @@
 import React, { useEffect, useState } from "react";
 import { Table } from "react-bootstrap";
+import useAuth from "../../Hooks/useAuth";
 import "./ManageOrders.css";
 
 const ManageOrders = () => {
   const [orders, setOrders] = useState([]);
+  const { logOut } = useAuth();
   useEffect(() => {
     fetch("./places.json")
       .then((res) => res.json())
@@ -33,6 +35,9 @@ const ManageOrders = () => {
             </tr>
           ))}
         </tbody>
+        <button onClick={logOut} className="login-btn">
+          Log Out
+        </button>
       </Table>
     </div>
   );

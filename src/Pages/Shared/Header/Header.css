@@ -1,1 +1,8 @@
-
+.selected {
+  color: blue !important;
+  /* background-color: blue;
+  color: white !important; */
+}
+.header {
+  background-color: whitesmoke;
+}

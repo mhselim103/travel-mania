@@ -1,20 +1,41 @@
-import React from "react";
+import React, { useState } from "react";
 import { Container, Nav, Navbar, NavDropdown, NavLink } from "react-bootstrap";
 // import { NavHashLink } from "react-router-hash-link";
+import "./Header.css";
 
 const Header = () => {
+  const [selected, setSelected] = useState("home");
   return (
-    <Navbar collapseOnSelect expand="lg" variant="light">
+    <Navbar collapseOnSelect expand="lg" fixed="top" className="header">
       <Container>
-        <Navbar.Brand className="fw-bolder fs-4" href="#home">
+        <Navbar.Brand
+          onClick={() => setSelected("home")}
+          className="fw-bolder fs-4"
+          href="#home"
+        >
           Travel Mania
         </Navbar.Brand>
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
         <Navbar.Collapse id="responsive-navbar-nav">
-          <Nav className="mx-auto">
-            <NavLink className="navbar">Home</NavLink>
-            <NavLink>Destinations</NavLink>
-            <NavLink>About Us</NavLink>
+          <Nav className="mx-auto fs-5 fw-bold">
+            <NavLink
+              onClick={() => setSelected("home")}
+              className={selected === "home" ? "selected navbar" : "navbar"}
+            >
+              Home
+            </NavLink>
+            <NavLink
+              onClick={() => setSelected("destination")}
+              className={selected === "destination" ? "selected" : ""}
+            >
+              Destinations
+            </NavLink>
+            <NavLink
+              onClick={() => setSelected("about")}
+              className={selected === "about" ? "selected" : ""}
+            >
+              About Us
+            </NavLink>
             {/* <NavLink>Contact Us</NavLink> */}
           </Nav>
           <Nav>
@@ -26,7 +47,12 @@ const Header = () => {
                 <NavLink>Add New Destination</NavLink>
               </NavDropdown.Item>
             </NavDropdown>
-            <NavLink>My Orders</NavLink>
+            <NavLink
+              onClick={() => setSelected("orders")}
+              className={selected === "orders" ? "selected" : ""}
+            >
+              My Orders
+            </NavLink>
 
             <NavLink>Log In</NavLink>
             <NavLink>Sign Up</NavLink>
