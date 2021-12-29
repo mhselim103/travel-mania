@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { Table } from "react-bootstrap";
 import useAuth from "../../Hooks/useAuth";
-import Header from "../Shared/Header/Header";
 
 const ManageOrders = () => {
   const [orders, setOrders] = useState([]);
@@ -13,8 +12,7 @@ const ManageOrders = () => {
   }, []);
   return (
     <div className="container text-center">
-      {/* <Header></Header> */}
-      <h1 className="banner">My Orders</h1>
+      <h1 className="banner">All Orders</h1>
       <Table responsive className="table">
         <thead>
           <tr>

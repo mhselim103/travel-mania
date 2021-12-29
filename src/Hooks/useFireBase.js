@@ -29,7 +29,7 @@ const useFirebase = () => {
       .then((result) => {
         setUser(result.user);
         const destination = location.state?.from || "/";
-        console.log(destination);
+        // console.log(destination);
         navigate(destination);
       })
       .catch((error) => {

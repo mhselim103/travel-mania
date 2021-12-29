@@ -1,9 +1,9 @@
 import React, { useState } from "react";
 import { Container, Nav, Navbar, NavDropdown, NavLink } from "react-bootstrap";
-// import { NavHashLink } from "react-router-hash-link";
 import "./Header.css";
 import useAuth from "../../../Hooks/useAuth";
 import { useNavigate } from "react-router-dom";
+import { HashLink } from "react-router-hash-link";
 const Header = () => {
   const { user, logOut } = useAuth();
   const [selected, setSelected] = useState("home");
@@ -11,6 +11,9 @@ const Header = () => {
 
   const handleLogin = () => {
     navigate("/login");
+  };
+  const handleRegister = () => {
+    navigate("/register");
   };
 
   const handleOrders = () => {
@@ -24,6 +27,15 @@ const Header = () => {
     navigate("/destinations");
     setSelected("destination");
   };
+  const handleAbout = () => {
+    navigate("/about");
+    setSelected("about");
+  };
+  const manageOrders = () => {
+    // navigate("/manageorders");
+    setSelected("manageorders");
+    // console.log("manageOrders");
+  };
 
   return (
     <Navbar
@@ -36,7 +48,7 @@ const Header = () => {
       variant="light"
     >
       <Container>
-        <Navbar.Brand onClick={() => handleHome()} className="fw-bolder fs-4">
+        <Navbar.Brand onClick={() => handleHome()} className="fw-bolder fs-4 ">
           Travel Mania
         </Navbar.Brand>
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
@@ -61,7 +73,7 @@ const Header = () => {
               Destinations
             </NavLink>
             <NavLink
-              onClick={() => setSelected("about")}
+              onClick={() => handleAbout()}
               className={selected === "about" ? "selected" : ""}
             >
               About Us
@@ -71,11 +83,23 @@ const Header = () => {
           <Nav className="fw-bold">
             {user?.email ? (
               <NavDropdown title="Admin" id="basic-nav-dropdown">
-                <NavDropdown.Item href="#action/3.1">
-                  <NavLink>Manage All Orders</NavLink>
+                <NavDropdown.Item>
+                  <NavLink
+                    onClick={() => manageOrders()}
+                    as={HashLink}
+                    to="/manageorders"
+                  >
+                    Manage All Orders
+                  </NavLink>
                 </NavDropdown.Item>
-                <NavDropdown.Item href="#action/3.2">
-                  <NavLink>Add New Destination</NavLink>
+                <NavDropdown.Item>
+                  <NavLink
+                    as={HashLink}
+                    to="/manageorders"
+                    onClick={() => manageOrders()}
+                  >
+                    Add New Destination
+                  </NavLink>
                 </NavDropdown.Item>
               </NavDropdown>
             ) : (
@@ -104,7 +128,7 @@ const Header = () => {
             {user?.email ? (
               <NavLink onClick={logOut}>Log out</NavLink>
             ) : (
-              <NavLink>Sign Up</NavLink>
+              <NavLink onClick={handleRegister}>Sign Up</NavLink>
             )}
           </Nav>
         </Navbar.Collapse>

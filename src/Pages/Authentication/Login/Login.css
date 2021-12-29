@@ -40,3 +40,18 @@ label {
 .login-btn:hover {
   background: #bf1650;
 }
+.sign-in {
+  background-color: #df4930;
+  color: white;
+  width: 75%;
+  border: none;
+  padding: 5px;
+  border-radius: 25px;
+  font-weight: 200;
+}
+.fb {
+  background: #507cc0;
+}
+.github {
+  background: #000;
+}
