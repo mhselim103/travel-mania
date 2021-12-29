@@ -43,7 +43,6 @@ const Header = () => {
       expand="lg"
       // fixed="top"
       sticky="top"
-      background="light"
       bg="light"
       variant="light"
     >

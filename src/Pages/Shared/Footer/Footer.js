@@ -11,15 +11,25 @@ const Footer = () => {
         <div className="col-md-4">
           <h1 className="text-primary fw-bold">Travel Mania</h1>
         </div>
-        <div className="col-md-8 row text-light">
+        <div className="col-md-8 row text-light ">
           <div className="col-md-4">
-            <h3>Terms & Conditions</h3>
+            <div className="d-flex flex-column align-items-center">
+              <h5>Terms & Conditions</h5>
+              <h6 className="text-center my-3">Privacy</h6>
+              <h6 className="text-center">Policy</h6>
+            </div>
           </div>
           <div className="col-md-4">
-            <h3>Social Network</h3>
+            <div className="d-flex  flex-column align-items-center">
+              <h5>Social Network</h5>
+              <i class="fab fa-facebook my-2 text-primary bg-light fs-3"></i>
+              <i class="fab fa-instagram fs-3"></i>
+              <i class="fab fa-whatsapp my-2 fs-3"></i>
+              <i class="fab fa-telegram fs-3"></i>
+            </div>
           </div>
           <div className="col-md-4">
-            <h3>Get Updates & More</h3>
+            <h5>Get Updates & More</h5>
             <p>Subscribe to the free newsletter and stay up to date</p>
             <form onSubmit={handleSubmit(onSubmit)}>
               <input
