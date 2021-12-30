@@ -6,35 +6,15 @@ import { useNavigate } from "react-router-dom";
 import { HashLink } from "react-router-hash-link";
 const Header = () => {
   const { user, logOut } = useAuth();
-  const [selected, setSelected] = useState("home");
+  const [selected, setSelected] = useState("");
   const navigate = useNavigate();
 
-  const handleLogin = () => {
-    navigate("/login");
-  };
-  const handleRegister = () => {
-    navigate("/register");
-  };
-
-  const handleOrders = () => {
-    navigate("/orders");
+  const handleSelected = (selection) => {
+    setSelected(selection);
   };
   const handleHome = () => {
     navigate("/home");
     setSelected("home");
-  };
-  const handleDestinations = () => {
-    navigate("/destinations");
-    setSelected("destination");
-  };
-  const handleAbout = () => {
-    navigate("/about");
-    setSelected("about");
-  };
-  const manageOrders = () => {
-    // navigate("/manageorders");
-    setSelected("manageorders");
-    // console.log("manageOrders");
   };
 
   return (
@@ -54,25 +34,31 @@ const Header = () => {
         <Navbar.Collapse id="responsive-navbar-nav">
           <Nav className="mx-auto fs-5 fw-bold">
             <NavLink
+              as={HashLink}
+              to="/"
               onClick={() => {
-                handleHome();
-                // setSelected("home");
-                // navigate("/");
+                handleSelected("home");
               }}
               className={selected === "home" ? "selected navbar" : "navbar"}
             >
               Home
             </NavLink>
             <NavLink
+              as={HashLink}
+              to="/destinations"
               onClick={() => {
-                handleDestinations();
+                handleSelected("destination");
               }}
               className={selected === "destination" ? "selected" : ""}
             >
               Destinations
             </NavLink>
             <NavLink
-              onClick={() => handleAbout()}
+              as={HashLink}
+              to="/about"
+              onClick={() => {
+                handleSelected("about");
+              }}
               className={selected === "about" ? "selected" : ""}
             >
               About Us
@@ -81,10 +67,10 @@ const Header = () => {
           </Nav>
           <Nav className="fw-bold">
             {user?.email ? (
-              <NavDropdown title="Admin" id="basic-nav-dropdown">
+              <NavDropdown title="Admin">
                 <NavDropdown.Item>
                   <NavLink
-                    onClick={() => manageOrders()}
+                    onClick={() => handleSelected("manage-orders")}
                     as={HashLink}
                     to="/manageorders"
                   >
@@ -94,8 +80,8 @@ const Header = () => {
                 <NavDropdown.Item>
                   <NavLink
                     as={HashLink}
-                    to="/manageorders"
-                    onClick={() => manageOrders()}
+                    to="/addNewDestination"
+                    onClick={() => handleSelected("new-destination")}
                   >
                     Add New Destination
                   </NavLink>
@@ -106,11 +92,12 @@ const Header = () => {
             )}
             {user?.email ? (
               <NavLink
+                as={HashLink}
+                to="/orders"
                 onClick={() => {
-                  setSelected("orders");
-                  handleOrders();
+                  handleSelected("my-orders");
                 }}
-                className={selected === "orders" ? "selected" : ""}
+                className={selected === "my-orders" ? "selected" : ""}
               >
                 My Orders
               </NavLink>
@@ -121,13 +108,17 @@ const Header = () => {
             {user?.email ? (
               <NavLink>{user.displayName}</NavLink>
             ) : (
-              <NavLink onClick={handleLogin}>Log In</NavLink>
+              <NavLink as={HashLink} to="/login">
+                Log In
+              </NavLink>
             )}
             {/* <NavLink>Log In</NavLink> */}
             {user?.email ? (
               <NavLink onClick={logOut}>Log out</NavLink>
             ) : (
-              <NavLink onClick={handleRegister}>Sign Up</NavLink>
+              <NavLink as={HashLink} to="/register">
+                Sign Up
+              </NavLink>
             )}
           </Nav>
         </Navbar.Collapse>

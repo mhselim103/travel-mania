@@ -15,6 +15,7 @@ import AuthProvider from "./Context/AuthProvider";
 import ManageOrders from "./Pages/ManageOrders/ManageOrders";
 import About from "./Pages/About/About";
 import Footer from "./Pages/Shared/Footer/Footer";
+import AddNewDestination from "./Pages/AddNewDestination/AddNewDestination";
 
 function App() {
   return (
@@ -57,6 +58,14 @@ function App() {
             element={
               <PrivateRoute>
                 <Booking />
+              </PrivateRoute>
+            }
+          />
+          <Route
+            path="/addNewDestination"
+            element={
+              <PrivateRoute>
+                <AddNewDestination />
               </PrivateRoute>
             }
           />

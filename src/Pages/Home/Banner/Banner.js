@@ -21,7 +21,7 @@ const Banner = () => {
             </h4>
             <Link to="/destinations">
               <button className="button">
-                Plan a Tour <i class="fas fa-angle-right"></i>{" "}
+                Plan a Tour <i className="fas fa-angle-right"></i>{" "}
               </button>
             </Link>
           </div>

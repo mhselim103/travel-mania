@@ -9,15 +9,10 @@ const Booking = () => {
   const { id } = useParams();
   const [tour, setTour] = useState([]);
   const navigate = useNavigate();
-  // const [tourId, setTourId] = useState("");
-  // const [tourCost, setTourCost] = useState("");
   useEffect(() => {
     fetch(`http://localhost:5000/packages/${id}`)
       .then((res) => res.json())
       .then((data) => {
-        // console.log(data);
-        // setTourId(data._id);
-        // setTourCost(data.price);
         setTour(data);
       });
   }, []);
@@ -27,11 +22,14 @@ const Booking = () => {
     formState: { errors },
   } = useForm();
   const onSubmit = (data) => {
-    console.log(data);
+    // console.log(data);
     axios
       .post("http://localhost:5000/orders", data)
       .then(function (response) {
-        console.log(response.data.insertedId);
+        if (response.data.insertedId) {
+          alert("Tour Booked Successfully");
+          navigate("/");
+        }
       })
       .catch(function (error) {
         console.log(error);
@@ -58,25 +56,31 @@ const Booking = () => {
             <input
               placeholder="Your Name"
               {...register("fullName")}
-              defaultValue={user.displayName}
+              defaultValue={user?.displayName}
             />
 
             <label htmlFor="email">Email</label>
-            <input
-              placeholder="Your Email"
-              type="email"
-              {...register("email")}
-              value={user?.email}
-            />
+            <input type="email" {...register("email")} value={user?.email} />
+            <label htmlFor="title">Title</label>
+            {tour && tour.title && (
+              <input {...register("title")} value={tour.title} />
+            )}
+            <label htmlFor="hotel">Title</label>
+            {tour && tour.hotel && (
+              <input {...register("hotel")} value={tour.hotel} />
+            )}
+            <label htmlFor="img">Image Url</label>
+            {tour && tour.img && (
+              <input {...register("img")} value={tour.img} />
+            )}
             <label htmlFor="productid">Product Id</label>
-            <input
-              placeholder="ProductId"
-              type="text"
-              {...register("productid")}
-              value={id}
-            />
-            {/* <label htmlFor="tourCost">Tour Cost</label>
-            <input type="text" {...register("tourCost")} value={tour?.price} /> */}
+            {tour && tour._id && (
+              <input type="text" {...register("productid")} value={tour._id} />
+            )}
+            <label htmlFor="price">Tour Cost</label>
+            {tour && tour.price && (
+              <input type="text" {...register("price")} value={tour.price} />
+            )}
             <div style={{ color: "red" }}>
               {Object.keys(errors).length > 0 &&
                 "There are errors, check your console."}

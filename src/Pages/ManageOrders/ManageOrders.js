@@ -1,19 +1,35 @@
 import React, { useEffect, useState } from "react";
 import { Table } from "react-bootstrap";
-import useAuth from "../../Hooks/useAuth";
-
+import "./ManageOrders.css";
 const ManageOrders = () => {
   const [orders, setOrders] = useState([]);
   useEffect(() => {
     fetch("http://localhost:5000/orders")
       .then((res) => res.json())
       .then((data) => {
-        console.log(data);
+        // console.log(data);
         setOrders(data);
       });
   }, []);
+  const handleDelete = (id) => {
+    const proceed = window.confirm("are you sure , you want to delete?");
+    if (proceed) {
+      const url = `http://localhost:5000/orders/${id}`;
+      fetch(url, {
+        method: "DELETE",
+      })
+        .then((res) => res.json())
+        .then((data) => {
+          if (data.deletedCount > 0) {
+            alert("deleted successfully");
+            const remainingOrders = orders.filter((order) => order._id !== id);
+            setOrders(remainingOrders);
+          }
+        });
+    }
+  };
   return (
-    <div className="container text-center">
+    <div className="container text-center manage-orders">
       <h1 className="banner">All Orders</h1>
       <Table responsive className="table">
         <thead>
@@ -26,12 +42,17 @@ const ManageOrders = () => {
         </thead>
         <tbody>
           {orders?.map((order, index) => (
-            <tr>
+            <tr key={index}>
               <td>{index + 1}</td>
               <td>{order.email}</td>
               <td>{order.productid}</td>
               <td>
-                <button className="red-button">Delete This Order</button>
+                <button
+                  onClick={() => handleDelete(order._id)}
+                  className="red-button"
+                >
+                  Delete This Order
+                </button>
               </td>
             </tr>
           ))}

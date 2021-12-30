@@ -1,10 +1,24 @@
+import axios from "axios";
 import React from "react";
 import { useForm } from "react-hook-form";
 import "./Footer.css";
 
 const Footer = () => {
-  const { register, handleSubmit } = useForm();
-  const onSubmit = (data) => console.log(data);
+  const { register, handleSubmit, reset } = useForm();
+  const onSubmit = (data) => {
+    axios
+      .post("http://localhost:5000/emails", data)
+      .then(function (response) {
+        console.log();
+        if (response.data.insertedId) {
+          alert("Subscribed");
+          reset();
+        }
+      })
+      .catch(function (error) {
+        console.log(error);
+      });
+  };
   return (
     <div className="mt-5 footer">
       <footer className="row p-5 container">
