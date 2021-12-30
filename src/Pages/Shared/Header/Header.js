@@ -66,7 +66,7 @@ const Header = () => {
             {/* <NavLink>Contact Us</NavLink> */}
           </Nav>
           <Nav className="fw-bold">
-            {user?.email ? (
+            {user && user.email && (
               <NavDropdown title="Admin">
                 <NavDropdown.Item>
                   <NavLink
@@ -87,10 +87,8 @@ const Header = () => {
                   </NavLink>
                 </NavDropdown.Item>
               </NavDropdown>
-            ) : (
-              ""
             )}
-            {user?.email ? (
+            {user && user.email && (
               <NavLink
                 as={HashLink}
                 to="/orders"
@@ -101,8 +99,6 @@ const Header = () => {
               >
                 My Orders
               </NavLink>
-            ) : (
-              ""
             )}
 
             {user?.email ? (
@@ -112,7 +108,6 @@ const Header = () => {
                 Log In
               </NavLink>
             )}
-            {/* <NavLink>Log In</NavLink> */}
             {user?.email ? (
               <NavLink onClick={logOut}>Log out</NavLink>
             ) : (
