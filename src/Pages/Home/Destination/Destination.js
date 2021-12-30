@@ -3,7 +3,8 @@ import { Card, Col } from "react-bootstrap";
 import { Link } from "react-router-dom";
 
 const Destination = ({ place }) => {
-  const { img, title, price, id } = place;
+  const { img, title, price, id, _id } = place;
+  console.log("product", _id);
   return (
     <Col>
       <Card className="h-100">
@@ -13,8 +14,10 @@ const Destination = ({ place }) => {
         </Card.Body>
         <div className="px-3 my-1 d-flex align-items-center justify-content-between">
           <h6>Fare : {price}</h6>
-          <Link to={`/${id}`}>
-            <button className="button mb-1">Explore </button>
+          <Link to={`/${_id}`}>
+            <button className="button mb-1">
+              Explore <i class="fas fa-angle-right"></i>{" "}
+            </button>
           </Link>
         </div>
       </Card>

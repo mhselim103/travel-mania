@@ -22,10 +22,10 @@ const Footer = () => {
           <div className="col-md-4">
             <div className="d-flex  flex-column align-items-center">
               <h5>Social Network</h5>
-              <i class="fab fa-facebook my-2 text-primary bg-light fs-3"></i>
-              <i class="fab fa-instagram fs-3"></i>
-              <i class="fab fa-whatsapp my-2 fs-3"></i>
-              <i class="fab fa-telegram fs-3"></i>
+              <i className="fab fa-facebook my-2 text-primary bg-light fs-3"></i>
+              <i className="fab fa-instagram fs-3"></i>
+              <i className="fab fa-whatsapp my-2 fs-3"></i>
+              <i className="fab fa-telegram fs-3"></i>
             </div>
           </div>
           <div className="col-md-4">

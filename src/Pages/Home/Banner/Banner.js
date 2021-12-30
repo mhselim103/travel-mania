@@ -20,7 +20,9 @@ const Banner = () => {
               and go where you like.We <br /> are waiting for you.
             </h4>
             <Link to="/destinations">
-              <button className="button">Plan a Tour </button>
+              <button className="button">
+                Plan a Tour <i class="fas fa-angle-right"></i>{" "}
+              </button>
             </Link>
           </div>
         </div>

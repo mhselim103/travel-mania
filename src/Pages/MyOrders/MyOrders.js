@@ -5,11 +5,14 @@ import Header from "../Shared/Header/Header";
 import "./MyOrders.css";
 const MyOrders = () => {
   const [orders, setOrders] = useState([]);
-  const { logOut } = useAuth();
+  const { user, logOut } = useAuth();
   useEffect(() => {
-    fetch("./places.json")
+    fetch(`http://localhost:5000/myorders/${user?.email}`)
       .then((res) => res.json())
-      .then((data) => setOrders(data));
+      .then((data) => {
+        console.log(data);
+        setOrders(data);
+      });
   }, []);
   return (
     <div className="container text-center">
@@ -28,8 +31,8 @@ const MyOrders = () => {
           {orders?.map((order, index) => (
             <tr>
               <td>{index + 1}</td>
-              <td>{order.title}</td>
-              <td>{order.hotel}</td>
+              <td>{order.email}</td>
+              <td>{order.productid}</td>
               <td>
                 <button className="red-button">Cancel</button>
               </td>

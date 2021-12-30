@@ -10,47 +10,47 @@
   },
   {
     "id": "2",
-    "img": "https://sgp1.digitaloceanspaces.com/cosmosgroup/news/7725621_New%20Project%20(4).jpg",
-    "title": "Cox's Bazar Sea Beach",
-    "description": "Cox’s Bazar is a town on the southeast coast of Bangladesh. It’s known for its very long, sandy beachfront, stretching from Sea Beach in the north to Kolatoli Beach in the south. Aggameda Khyang monastery is home to bronze statues and centuries-old Buddhist manuscripts. South of town, the tropical rainforest of Himchari National Park has waterfalls and many birds. North, sea turtles breed on nearby Sonadia Island.",
-    "hotel": "Sayemon Resort",
+    "img": "https://cdn.britannica.com/87/93987-050-779DFE3F/Boats-harbour-Marcel-Cove-Lesser-Antilles-Saint-Martin.jpg",
+    "title": "Saint Martin",
+    "description": "Saint Martin's Island harbors some of the most beautiful beaches in Bangladesh. It has become one of the most popular tourist destinations in Bangladesh among the local tourists in recent years. The island is located in the Bay of Bengal, about 9 km south of the tip of the Cox's Bazar-Teknaf peninsula",
+    "hotel": "The Atlantic Resort Saint Martin",
     "bedroom": "Double",
     "price": "25000"
   },
   {
     "id": "3",
-    "img": "https://sgp1.digitaloceanspaces.com/cosmosgroup/news/7725621_New%20Project%20(4).jpg",
-    "title": "Cox's Bazar Sea Beach",
-    "description": "Cox’s Bazar is a town on the southeast coast of Bangladesh. It’s known for its very long, sandy beachfront, stretching from Sea Beach in the north to Kolatoli Beach in the south. Aggameda Khyang monastery is home to bronze statues and centuries-old Buddhist manuscripts. South of town, the tropical rainforest of Himchari National Park has waterfalls and many birds. North, sea turtles breed on nearby Sonadia Island.",
-    "hotel": "Sayemon Resort",
-    "bedroom": "Double",
+    "img": "https://i.ytimg.com/vi/QcrmaKMwQ-c/maxresdefault.jpg",
+    "title": "Nilachal, Bandarban",
+    "description": "Nilachal is the nearest tourist spot from Bandarban. It is situated at Tigerpara. It is near about 2000 feet above of sea level and 5 kilometer away from the Bandarban town. From here visitor can see the total glance of Bandarban town and a vast landscape. In the rainy season visitor can be thrilled walking through the clouds. Visitor can watch a golden twilight in the evening and also enjoy an evergreen moonlight in the moonlit night. During the winter season, it is awesome at the foggy morning. On the way to Nilachal, visitor can see some tribe villages with their raw natural expression",
+    "hotel": "Bandarban Resort",
+    "bedroom": "Two/Three",
     "price": "35000"
   },
   {
     "id": "4",
-    "img": "https://sgp1.digitaloceanspaces.com/cosmosgroup/news/7725621_New%20Project%20(4).jpg",
-    "title": "Cox's Bazar Sea Beach",
-    "description": "Cox’s Bazar is a town on the southeast coast of Bangladesh. It’s known for its very long, sandy beachfront, stretching from Sea Beach in the north to Kolatoli Beach in the south. Aggameda Khyang monastery is home to bronze statues and centuries-old Buddhist manuscripts. South of town, the tropical rainforest of Himchari National Park has waterfalls and many birds. North, sea turtles breed on nearby Sonadia Island.",
-    "hotel": "Sayemon Resort",
-    "bedroom": "Double",
+    "img": "https://www.travelmate.com.bd/wp-content/uploads/2019/07/Jaflong-Travel.jpg",
+    "title": "Jaflong, Sylhet",
+    "description": "Jaflong is famous for its stone collections and is home of the Khasia tribe. Jaflong is also a scenic spot nearby amidst tea gardens and rare beauty of rolling stones from hills. You can watch Dauki Bazar on hills of Meghalaya & Hanging bridge connected between two hills of Meghalaya, it looks beautifu",
+    "hotel": "Grand Palace Sylhet",
+    "bedroom": "Three",
     "price": "45000"
   },
   {
     "id": "5",
-    "img": "https://sgp1.digitaloceanspaces.com/cosmosgroup/news/7725621_New%20Project%20(4).jpg",
-    "title": "Cox's Bazar Sea Beach",
-    "description": "Cox’s Bazar is a town on the southeast coast of Bangladesh. It’s known for its very long, sandy beachfront, stretching from Sea Beach in the north to Kolatoli Beach in the south. Aggameda Khyang monastery is home to bronze statues and centuries-old Buddhist manuscripts. South of town, the tropical rainforest of Himchari National Park has waterfalls and many birds. North, sea turtles breed on nearby Sonadia Island.",
-    "hotel": "Sayemon Resort",
-    "bedroom": "Double",
-    "price": "55000"
+    "img": "https://media.istockphoto.com/photos/old-town-of-basel-with-munster-cathedral-switzerland-picture-id639775296?b=1&k=20&m=639775296&s=170667a&w=0&h=5Kchu63sI-ih83F6z2GJ54DI2FwBZ2iRku2l8qm3HoI=",
+    "title": "Switzerland",
+    "description": "Switzerland is a mountainous Central European country, home to numerous lakes, villages and the high peaks of the Alps. Its cities contain medieval quarters, with landmarks like capital Bern’s Zytglogge clock tower and Lucerne’s wooden chapel bridge. The country is also known for its ski resorts and hiking trails. Banking and finance are key industries, and Swiss watches and chocolate are world renowned",
+    "hotel": "Hotel Suisse, Geneva",
+    "bedroom": "Single/Double/Family",
+    "price": "155000"
   },
   {
     "id": "6",
-    "img": "https://sgp1.digitaloceanspaces.com/cosmosgroup/news/7725621_New%20Project%20(4).jpg",
-    "title": "Cox's Bazar Sea Beach",
-    "description": "Cox’s Bazar is a town on the southeast coast of Bangladesh. It’s known for its very long, sandy beachfront, stretching from Sea Beach in the north to Kolatoli Beach in the south. Aggameda Khyang monastery is home to bronze statues and centuries-old Buddhist manuscripts. South of town, the tropical rainforest of Himchari National Park has waterfalls and many birds. North, sea turtles breed on nearby Sonadia Island.",
-    "hotel": "Sayemon Resort",
-    "bedroom": "Double",
-    "price": "65000"
+    "img": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTzf4GUsQ_7bTaPZlDInTC8UrHT5owGVAgyeQ&usqp=CAU",
+    "title": "Turkey",
+    "description": "Turkey, officially the Republic of Turkey, is a country located mainly on Anatolia in Western Asia, with a small portion on the Balkans in Southeast Europe",
+    "hotel": "The Cappadocia Hotel",
+    "bedroom": "Double/Family",
+    "price": "265000"
   }
 ]

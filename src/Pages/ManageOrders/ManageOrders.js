@@ -4,11 +4,13 @@ import useAuth from "../../Hooks/useAuth";
 
 const ManageOrders = () => {
   const [orders, setOrders] = useState([]);
-  const { logOut } = useAuth();
   useEffect(() => {
-    fetch("./places.json")
+    fetch("http://localhost:5000/orders")
       .then((res) => res.json())
-      .then((data) => setOrders(data));
+      .then((data) => {
+        console.log(data);
+        setOrders(data);
+      });
   }, []);
   return (
     <div className="container text-center">
@@ -17,7 +19,7 @@ const ManageOrders = () => {
         <thead>
           <tr>
             <th>Index</th>
-            <th>Destination</th>
+            <th>Email</th>
             <th>Id</th>
             <th>Update</th>
           </tr>
@@ -26,8 +28,8 @@ const ManageOrders = () => {
           {orders?.map((order, index) => (
             <tr>
               <td>{index + 1}</td>
-              <td>{order.title}</td>
-              <td>{order.price}</td>
+              <td>{order.email}</td>
+              <td>{order.productid}</td>
               <td>
                 <button className="red-button">Delete This Order</button>
               </td>
