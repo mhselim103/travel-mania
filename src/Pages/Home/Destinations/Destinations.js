@@ -5,7 +5,7 @@ import Destination from "../Destination/Destination";
 const Destinations = () => {
   const [places, setPlaces] = useState([]);
   useEffect(() => {
-    fetch("http://localhost:5000/packages")
+    fetch("https://afternoon-gorge-65476.herokuapp.com/packages")
       .then((res) => res.json())
       .then((data) => setPlaces(data));
   }, []);

@@ -1,12 +1,10 @@
 import React from "react";
-import Header from "../Shared/Header/Header";
 import management from "../../Images/management.jpg";
 import "./About.css";
 
 const About = () => {
   return (
     <div className="container mt-5">
-      {/* <Header></Header> */}
       <h1 className="text-center  mb-4">Who We Are?</h1>
       <div className="row d-md-flex align-items-center">
         <div className="col-md-6 d-md-flex justify-content-end">

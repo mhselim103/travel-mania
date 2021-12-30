@@ -10,7 +10,7 @@ const Booking = () => {
   const [tour, setTour] = useState([]);
   const navigate = useNavigate();
   useEffect(() => {
-    fetch(`http://localhost:5000/packages/${id}`)
+    fetch(`https://afternoon-gorge-65476.herokuapp.com/packages/${id}`)
       .then((res) => res.json())
       .then((data) => {
         setTour(data);
@@ -24,7 +24,7 @@ const Booking = () => {
   const onSubmit = (data) => {
     // console.log(data);
     axios
-      .post("http://localhost:5000/orders", data)
+      .post("https://afternoon-gorge-65476.herokuapp.com/orders", data)
       .then(function (response) {
         if (response.data.insertedId) {
           alert("Tour Booked Successfully");

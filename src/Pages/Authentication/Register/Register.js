@@ -4,8 +4,6 @@ import { Link } from "react-router-dom";
 import "./Register.css";
 
 const Register = () => {
-  /* const { register, handleSubmit } = useForm();
-  const onSubmit = (data) => console.log(data); */
   const {
     register,
     handleSubmit,
@@ -36,7 +34,6 @@ const Register = () => {
           {Object.keys(errors).length > 0 &&
             "There are errors, check your console."}
         </div>
-        {/* <input type="submit" /> */}
         <button className="register-btn">Sign Up</button>
         <Link to="/login">
           <small className="d-block text-end">Already Registered?</small>

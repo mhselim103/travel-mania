@@ -9,7 +9,7 @@ const AddNewDestination = () => {
   const onSubmit = (data) => {
     // alert(JSON.stringify(data));
     axios
-      .post("http://localhost:5000/packages", data)
+      .post("https://afternoon-gorge-65476.herokuapp.com/packages", data)
       .then(function (response) {
         if (response.data.insertedId) {
           alert("New Destination Added");

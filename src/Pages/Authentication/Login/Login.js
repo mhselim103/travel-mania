@@ -5,8 +5,7 @@ import "./Login.css";
 import useAuth from "../../../Hooks/useAuth";
 
 const Login = () => {
-  const { signInUsingGoogle, user, logOut } = useAuth();
-  // console.log(signInUsingGoogle);
+  const { signInUsingGoogle } = useAuth();
   const {
     register,
     handleSubmit,
@@ -14,7 +13,6 @@ const Login = () => {
   } = useForm();
   const navigate = useNavigate();
   const location = useLocation();
-  // const redirect_uri = location?.state?.from || "/";
   const onSubmit = (data) => {
     console.log(data);
   };
@@ -22,18 +20,12 @@ const Login = () => {
     e.preventDefault();
     // console.log("hello");
     signInUsingGoogle(location, navigate);
-  }; /* 
-  const logout= () => {
-    logout()
-  } */
+  };
   return (
     <div className="container row my-5">
       <div className="col-sm-12 col-md-6">
         <form onSubmit={handleSubmit(onSubmit)}>
           <h3 className="mb-5">Log In Here</h3>
-          {/* 
-      <label htmlFor="lastName">Full Name</label>
-      <input placeholder="Your Name" {...register("fullName")} /> */}
 
           <label htmlFor="email">Email</label>
           <input placeholder="Your Email" type="email" {...register("email")} />
@@ -68,9 +60,6 @@ const Login = () => {
           </button>
         </div>
       </div>
-      {/* <button onClick={logOut} className="login-btn">
-        Log Out
-      </button> */}
     </div>
   );
 };

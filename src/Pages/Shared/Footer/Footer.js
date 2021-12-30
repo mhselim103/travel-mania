@@ -7,7 +7,7 @@ const Footer = () => {
   const { register, handleSubmit, reset } = useForm();
   const onSubmit = (data) => {
     axios
-      .post("http://localhost:5000/emails", data)
+      .post("https://afternoon-gorge-65476.herokuapp.com/emails", data)
       .then(function (response) {
         console.log();
         if (response.data.insertedId) {
